@@ -1,0 +1,62 @@
+<head>
+  <title>7 Habits of Highly Effective People</title>
+</head>
+
+<body>
+  <h3>Welcome</h3>
+  {{> quotes}}
+  {{> loginform}}
+  <!--
+  {{#if currentUser}}
+      {{> settings}}
+    {{else}}
+      {{> signup}}
+      {{> login}}
+  {{/if}}
+  -->
+</body>
+
+<template name="quotes">
+  {{#each quote}}
+  <h3>{{saying}}</h3>
+  <p>
+    {{author}}
+  </p>
+  {{/each}}
+</template>
+
+<template name="loginform">
+  <form class="ui form">
+    <button class="ui olive button signin" type="submit">Sign in</button>
+    <div class="field">
+    <div class="ui checkbox">
+      <input type="checkbox" tabindex="0" class="hidden">
+      <label>I agree to the Terms and Conditions</label>
+    </div>
+    </div>
+ </form>
+</template>
+
+
+<template name="settings">
+  <p>You're logged in!</p>
+  <p><a href="#" class="logout">Logout</a></p>
+</template>
+
+<template name="signup">
+  <h2>Signup</h2>
+  <form>
+    <input type="email" name="signupEmail" placeholder="Email">
+    <input type="password" name="signupPassword" placeholder="Password">
+    <input type="submit" value="Signup">
+  </form>
+</template>
+
+<template name="login">
+  <h2>Log in</h2>
+  <form>
+    <input type="email" name="loginEmail" placeholder="Email">
+    <input type="password" name="loginPassword" placeholder="Password">
+    <input type="submit" value="Login">
+  </form>
+</template>
