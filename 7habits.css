@@ -1,0 +1,46 @@
+body, html{
+	height: 100%;
+	background: url('/trees2.jpg') no-repeat center center fixed;
+	background-size: cover;
+}
+
+div#background-div {
+	height:100%;
+	position:relative;
+}
+
+div#opacity {
+	margin-top: 2cm;
+	margin-bottom: 6cm;
+	background:rgba(0, 0, 0, 0.7);
+	border: 2px solid gray;	
+	width:500px;
+	height:750px;	
+}
+
+div#content{
+
+	width:450px;
+	height:700px;
+	font-weight:bold;
+	color:white;
+}
+
+div#content h1 {
+	font-weight: bold;
+	color: #DBD388;
+	/*color: #FFB878;*/
+	text-align: center;
+	margin-top: 15px;
+}
+
+div#content p {
+	text-align: right;
+}
+
+div#content h3 {
+	text-align: left;
+}
+
+
+

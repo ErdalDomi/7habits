@@ -3,18 +3,30 @@
 </head>
 
 <body>
-  <h3>Welcome</h3>
-  {{> quotes}}
-  {{> loginform}}
-  <!--
-  {{#if currentUser}}
-      {{> settings}}
-    {{else}}
-      {{> signup}}
-      {{> login}}
-  {{/if}}
-  -->
+    
+    <div id="background-div" style="text-align: center">
+     
+        <div id="opacity" style="display: inline-block;">
+          <div id="content" style="display: inline-block;">
+                <h1> 7 Habits of Highly Effective People</h1>
+  
+                {{> quotes}}
+                {{> loginform}}
+        
+                  {{#if currentUser}}
+                    {{> settings}}
+                  {{else}}
+                    {{> signup}}
+                    {{> login}}
+                  {{/if}}
+
+           </div>
+           </div>
+     </div>
+
+
 </body>
+
 
 <template name="quotes">
   {{#each quote}}
@@ -24,6 +36,8 @@
   </p>
   {{/each}}
 </template>
+
+
 
 <template name="loginform">
   <form class="ui form">
