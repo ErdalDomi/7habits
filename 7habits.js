@@ -1,6 +1,21 @@
 QuotesList = new Mongo.Collection('quotes');
 
 if(Meteor.isClient){
+
+  Session.set('notstarted', true);
+
+  Template.body.helpers({
+    'notstarted': function(){
+      return Session.get('notstarted');
+    }
+  });
+
+  Template.start.events({
+    "click .startbtn": function(){
+      Session.set('notstarted', !Session.get('notstarted'));
+    }
+  });
+
   Template.quotes.helpers({
     'quote': function(){
       var array = QuotesList.find().fetch();
@@ -33,12 +48,12 @@ if(Meteor.isClient){
       Meteor.loginWithPassword(emailVar, passwordVar);
     }
   });
-  Template.settings.events({
+  /*Template.settings.events({
     'click .logout': function(event) {
       event.preventDefault();
       Meteor.logout();
     }
-  });
+  });*/
 }
 
 

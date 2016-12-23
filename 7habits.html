@@ -3,30 +3,27 @@
 </head>
 
 <body>
-    
-    <div id="background-div" style="text-align: center">
-     
-        <div id="opacity" style="display: inline-block;">
-          <div id="content" style="display: inline-block;">
-                <h1> 7 Habits of Highly Effective People</h1>
-  
-                {{> quotes}}
-                {{> loginform}}
-        
-                  {{#if currentUser}}
-                    {{> settings}}
-                  {{else}}
-                    {{> signup}}
-                    {{> login}}
-                  {{/if}}
-
-           </div>
-           </div>
-     </div>
-
+{{#if notstarted}}
+  {{>start}}
+{{else}}
+  {{>login}}
+  <h2> Or </h2>
+  {{>signup}}
+{{/if}}
 
 </body>
 
+<template name="start">
+  <div id="background-div" style="text-align: center">
+    <div id="opacity" style="display: inline-block;">
+      <div id="content" style="display: inline-block;">
+        <h1> 7 Habits of Highly Effective People</h1>
+        {{> quotes}}
+        <button type="button" class="btn btn-default startbtn">Get Started</button>
+      </div>
+    </div>
+  </div>
+</template>
 
 <template name="quotes">
   {{#each quote}}
@@ -37,40 +34,25 @@
   {{/each}}
 </template>
 
-
-
-<template name="loginform">
-  <form class="ui form">
-    <button class="ui olive button signin" type="submit">Sign in</button>
-    <div class="field">
-    <div class="ui checkbox">
-      <input type="checkbox" tabindex="0" class="hidden">
-      <label>I agree to the Terms and Conditions</label>
-    </div>
-    </div>
- </form>
-</template>
-
-
-<template name="settings">
-  <p>You're logged in!</p>
-  <p><a href="#" class="logout">Logout</a></p>
-</template>
-
-<template name="signup">
-  <h2>Signup</h2>
-  <form>
-    <input type="email" name="signupEmail" placeholder="Email">
-    <input type="password" name="signupPassword" placeholder="Password">
-    <input type="submit" value="Signup">
-  </form>
-</template>
-
 <template name="login">
   <h2>Log in</h2>
   <form>
     <input type="email" name="loginEmail" placeholder="Email">
     <input type="password" name="loginPassword" placeholder="Password">
     <input type="submit" value="Login">
+  </form>
+</template>
+
+<!--
+<template name="settings">
+  <p><a href="#" class="logout">Logout</a></p>
+</template>
+-->
+<template name="signup">
+  <h2>Signup</h2>
+  <form>
+    <input type="email" name="signupEmail" placeholder="Email">
+    <input type="password" name="signupPassword" placeholder="Password">
+    <input type="submit" value="Signup">
   </form>
 </template>
