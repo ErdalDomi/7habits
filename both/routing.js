@@ -11,3 +11,6 @@ Router.route('/register');
 Router.route('/login');
 Router.route('/home');
 Router.route('/about');
+Router.route('/proactivity');
+Router.route('/mission');
+Router.route('/timetable');
