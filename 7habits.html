@@ -1,5 +1,5 @@
 <head>
-  <title>7 Habits of Highly Effective People</title>
+  <title>The 7 Habits of Highly Effective People</title>
 </head>
 
 <body>
@@ -7,15 +7,14 @@
   {{>start}}
 {{else}}
   {{>login}}
-  <h2> Or </h2>
-  {{>signup}}
+  <!--{{>signup}}-->
 {{/if}}
 
 </body>
 
 <template name="start">
   <div id="background-div" style="text-align: center">
-    <div id="opacity" style="display: inline-block;">
+    <div id="square" style="display: inline-block;">
       <div id="content" style="display: inline-block;">
         <h1> 7 Habits of Highly Effective People</h1>
         {{> quotes}}
@@ -34,25 +33,54 @@
   {{/each}}
 </template>
 
+
 <template name="login">
-  <h2>Log in</h2>
-  <form>
-    <input type="email" name="loginEmail" placeholder="Email">
-    <input type="password" name="loginPassword" placeholder="Password">
-    <input type="submit" value="Login">
-  </form>
+ <div id="login_background">
+
+  <div id="login_heading">
+    <p>The <strong>7 habits</strong><br>of highly effective people</p>
+    <br>
+
+      <div id="login_heading2">
+        <h3>Login Form</h3>
+
+          <div id="login_form">
+            <form>
+              <input type="email" name="loginEmail" placeholder="Email">
+              <br>
+              <br>
+              <input type="password" name="loginPassword" placeholder="Password">
+              <br>
+              <br>
+              <input type="submit" value="Login">
+            </form>
+          </div>
+      </div>
+   </div>
+  </div> 
 </template>
 
 <!--
 <template name="settings">
   <p><a href="#" class="logout">Logout</a></p>
 </template>
--->
+
 <template name="signup">
+  <div id="signup_background" >
   <h2>Signup</h2>
+  <div id="signup_content" >
   <form>
     <input type="email" name="signupEmail" placeholder="Email">
     <input type="password" name="signupPassword" placeholder="Password">
     <input type="submit" value="Signup">
   </form>
-</template>
+  </div>
+  </div>
+</template> 
+
+-->
+
+
+
+
+
