@@ -4,7 +4,8 @@
       <div id="content" style="display: inline-block;">
         <h1> 7 Habits of Highly Effective People</h1>
         {{> quotes}}
-        <button type="button" class="btn btn-default startbtn">Get Started</button>
+        <a href="{{pathFor route='login'}}" class="btn btn-default startbtn" role="button">Sign in</a>
+        <p>Don't have an account? Register <a href="{{pathFor route='register'}}">here.</a></p>
       </div>
     </div>
   </div>

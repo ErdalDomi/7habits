@@ -1,6 +1,6 @@
 Router.route('/',{
-  name: 'home',
-  template: 'home'
+  name: 'start',
+  template: 'start'
 });
 Router.configure({
   layoutTemplate: 'main',
@@ -9,3 +9,5 @@ Router.configure({
 
 Router.route('/register');
 Router.route('/login');
+Router.route('/home');
+Router.route('/about');
