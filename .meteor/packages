@@ -26,3 +26,4 @@ twbs:bootstrap
 iron:router
 accounts-ui@1.1.9
 themeteorchef:jquery-validation
+mirageglobe:snapsvgcdn
