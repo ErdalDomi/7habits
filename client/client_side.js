@@ -24,11 +24,3 @@ console.log("session is now : "+ Session.get('notstarted'));
         }
     }
   });
-
-
-  Template.body.helpers({
-    'notstarted': function(){
-      console.log("body.helpers returns session: " + Session.get('notstarted'));
-      return Session.get('notstarted');
-    }
-  });
