@@ -1,4 +1,4 @@
-/* body, html{
+body, html{
 	height: 100%;
 	background: url('/trees2.jpg') no-repeat center center fixed;
 	background-size: cover;
@@ -20,21 +20,20 @@ div#square {
 	background:rgba(0, 0, 0, 0.7);
 	border: 2px solid gray;
 	width:500px;
-	height:750px;
+	height:700;
 }
 
 div#content{
 	margin-top: 5 px;
 	width:450px;
-	height:700px;
+	height:700;
 	font-weight:bold;
 	color:white;
 }
 
 div#content h1 {
 	font-weight: bold;
-	color: #DBD388;
-
+	color: #A4B93C;
 	text-align: center;
 	margin-top: 15px;
 }
@@ -91,7 +90,7 @@ div#login_heading2 h3 {
     margin: 0 6px 0 0;
 } */
 
-/*
+
 div#login_form  {
 	margin-top: 40px;
 	margin-left: 5px;
@@ -110,14 +109,14 @@ input {
 	color:black;
 }
 
-*/
+
 
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #333333;
 }
 
 li {
@@ -140,18 +139,16 @@ li.options a:hover {
 }
 
 li.selected a { 
-	background-color: green;
+	background-color: #A4B93C;
 	color:white;
 	text-decoration: none;
  }
 
  li.options a {
- 	background-color: #333;
+ 	background-color: #333333;
 	color:white;
 	text-decoration: none;
  }
-
-
 
 .footer {
   position: absolute;
@@ -159,6 +156,7 @@ li.selected a {
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: #e6e6e6;
-  text-align: center;
+  background-color: #333333;
+  text-align: center; 
 }
+
