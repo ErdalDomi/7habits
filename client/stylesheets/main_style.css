@@ -3,6 +3,7 @@ body, html{
 	background: url('/trees2.jpg') no-repeat center center fixed;
 	background-size: cover;
 	color:white;
+	margin-bottom: 4cm;
 }
 
 body#h2 {
@@ -16,7 +17,7 @@ div#background-div {
 
 div#square {
 	margin-top: 2cm;
-	margin-bottom: 6cm;
+	margin-bottom: 2cm;
 	background:rgba(0, 0, 0, 0.7);
 	border: 2px solid gray;
 	width:500px;
@@ -24,7 +25,8 @@ div#square {
 }
 
 div#content{
-	margin-top: 5 px;
+	margin-top: 10px;
+	margin-bottom: 20px;
 	width:450px;
 	height:700;
 	font-weight:bold;
@@ -32,23 +34,87 @@ div#content{
 }
 
 div#content h1 {
-	font-weight: bold;
-	color: #A4B93C;
+
+	color: #D0CC73;
 	text-align: center;
 	margin-top: 15px;
 }
 
-
-div#content p {
-	text-align: right;
+#content .sayings {
+	text-align:left;
+	font-size: 19px;
 }
 
-div#content h3 {
-	text-align: left;
+#content .authors {
+	text-align:right;
+	font-size: 16px;
 }
 
 
-div#login_background{
+
+div#signin {
+	margin-top: 30px;
+	width:160px;
+
+}
+
+div#signin p {
+	text-align: center;
+}
+
+div#signin {
+	margin-top: 40px;
+	margin-bottom: 10px;
+}
+
+.btn {
+    padding: 9px 15px;
+    border: 0 none;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+.container {
+    padding: 25px;
+    position: fixed;
+}
+
+.form-login {
+    background-color: #EDEDED;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+}
+
+h4 { 
+ border:0 solid #fff; 
+ border-bottom-width:1px;
+ padding-bottom:10px;
+ text-align: center;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+div#background-div {
+	
+} 
+
+
+
+/*div#login_background{
 	margin: auto;
 	margin-top: 3cm;
 	background:rgba(0, 0, 0, 0.7);
@@ -121,13 +187,14 @@ ul {
 
 li {
     float: left;
+
 }
 
 li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 12px 16px;
     text-decoration: none;
 }
 
@@ -139,7 +206,7 @@ li.options a:hover {
 }
 
 li.selected a { 
-	background-color: #A4B93C;
+
 	color:white;
 	text-decoration: none;
  }
@@ -151,7 +218,7 @@ li.selected a {
  }
 
 .footer {
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
@@ -159,4 +226,5 @@ li.selected a {
   background-color: #333333;
   text-align: center; 
 }
+
 

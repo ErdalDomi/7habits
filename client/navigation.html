@@ -1,11 +1,12 @@
 <template name="navigation">
 
-  <ul>
-    <li class="selected"><a href="{{pathFor route='start'}}">Logo</a></li>
-    <li class="options"><a href="{{pathFor route='home'}}">Home</a></li>
-    <li class="options"><a href="{{pathFor route='login'}}">Login</a></li>
-    <li class="options"><a href="{{pathFor route='about'}}">About</a></li>
+  <ul class="navbar">
+    <li class="options"><a href="{{pathFor route='start'}}"><i class="material-icons md-18" style="font-size:25px;color:#A4B93C;">home</i></a></li>
+
+    <li class="options" style="float:right;font-size:20px;"><a href="{{pathFor route='home'}}">Home</a></li>
+     <li class="options" style="float:right;font-size:20px;"><a href="{{pathFor route='login'}}">Login</a></li>
+     <li class="options" style="float:right;font-size:20px;"><a href="{{pathFor route='about'}}">About</a></li>
   </ul>
 
-
 </template>
+

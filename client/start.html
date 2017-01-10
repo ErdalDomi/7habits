@@ -3,9 +3,15 @@
     <div id="square" style="display: inline-block;">
       <div id="content" style="display: inline-block;">
         <h1> 7 Habits of Highly Effective People</h1>
+        <br>
+        <br>
         {{> quotes}}
-        <a href="{{pathFor route='login'}}" class="btn btn-default startbtn" role="button">Sign in</a>
-        <p>Don't have an account? Register <a href="{{pathFor route='register'}}">here.</a></p>
+        <div id="signin" style="display: inline-block;">
+        <a href="{{pathFor route='login'}}" class="btn btn-default btn-block" role="button">Sign in</a>
+        <br>
+        <br>
+        <p>Don't have an account? <br>Register<a href="{{pathFor route='register'}}"> <span style="color: #A4B93C"> here. </span></a></p>
+        </div>
       </div>
     </div>
   </div>
