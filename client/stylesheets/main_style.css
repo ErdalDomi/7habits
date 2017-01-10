@@ -1,7 +1,7 @@
 body, html{
 	height: 100%;
-	background: url('/trees2.jpg') no-repeat center center fixed;
-	background-size: cover;
+	background-image: url('/background.png');
+	background-repeat: repeat;
 	color:white;
 	margin-bottom: 4cm;
 }
@@ -11,6 +11,7 @@ body#h2 {
 }
 
 div#background-div {
+
 	height:100%;
 	position:relative;
 }
