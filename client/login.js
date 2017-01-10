@@ -1,5 +1,6 @@
 Template.login.events({
   'submit form': function(event){
+    console.log("you clicked login");
     event.preventDefault();
     /*
 

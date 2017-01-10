@@ -1,0 +1,8 @@
+div#aboutBackground {
+	margin-top: 2cm;
+	margin-bottom: 2cm;
+	background:rgba(0, 0, 0, 0.7);
+	border: 2px solid gray;
+	width:500px;
+	height:700;
+}

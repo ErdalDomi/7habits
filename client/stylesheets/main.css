@@ -1,0 +1,9 @@
+body, html{
+	height: 100%;
+	background-image: url('/background.png');
+	background-repeat: repeat;
+	color:white;
+	margin-bottom: 4cm;
+}
+
+
