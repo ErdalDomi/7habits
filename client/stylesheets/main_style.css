@@ -1,4 +1,4 @@
-body, html{
+/*body, html{
 	height: 100%;
 	background: url('/trees2.jpg') no-repeat center center fixed;
 	background-size: cover;
@@ -90,7 +90,7 @@ div#login_heading2 h3 {
     margin: 0 6px 0 0;
 } */
 
-
+/*
 div#login_form  {
 	margin-top: 40px;
 	margin-left: 5px;
@@ -138,7 +138,7 @@ li.options a:hover {
     text-decoration: none;
 }
 
-li.selected a { 
+li.selected a {
 	background-color: #A4B93C;
 	color:white;
 	text-decoration: none;
@@ -157,6 +157,6 @@ li.selected a {
   left: 0;
   padding: 1rem;
   background-color: #333333;
-  text-align: center; 
+  text-align: center;
 }
-
+*/
