@@ -1,15 +1,6 @@
-body, html{
-	
-	background-image: url('/background.png');
-	background-repeat: repeat;
-	color:white;
-	
+body {
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(204, 255, 153, 1) 0%,rgba(255, 255, 255, 1) 100%);
 }
-
-body#h2 {
-	text-align:center;
-}
-
 
 .btn {
     padding: 9px 15px;
@@ -18,6 +9,7 @@ body#h2 {
     letter-spacing: 1px;
     text-transform: uppercase;
 }
+
 
 
 

@@ -1,20 +1,41 @@
 if(QuotesList.find().count() === 0){
-  QuotesList.insert({saying: "It is in the ordinary events of every day that we develop the proactive capacity to handle the extraordinary pressures of life. It’s how we make and keep commitments, how we handle a traffic jam, how we respond to an irate customer or a disobedient child. It’s how we view our problems and where we focus our energies. It’s the language we use.",
-  author: "Habit 1: Be Proactive"});
+ 
   QuotesList.insert({saying: "It is the ability to choose which makes us human.",
   author: "Madeleine L'Engle - Habit 1: Be Proactive"});
   QuotesList.insert({saying: "How would today be different if you believed and acted on the idea that you can live out of your imagination instead of out your memory?",
   author: "Habit 2: Begin With the End in Mind"});
-  QuotesList.insert({saying: "What changes could you make to your schedule today that would allow you to focus on the important rather then the urgent?",
+  QuotesList.insert({saying: "Your planning tool should be your servant, never your master.",
   author: "Habit 3: Put First Things First"});
-  QuotesList.insert({saying: "What are your Big Rocks for this week—the things you need to do to accomplish what is most important to you?",
-  author: "Habit 3: Put First Things First"});
-  QuotesList.insert({saying: "It is in the ordinary events of every day that we develop the proactive capacity to handle the extraordinary pressures of life. It’s how we make and keep commitments, how we handle a traffic jam, how we respond to an irate customer or a disobedient child. It’s how we view our problems and where we focus our energies. It’s the language we use.",
-  author: "Habit 1: Be Proactive"});
-  QuotesList.insert({saying: "Your planning tool should be your servant, never your master. Since it has to work for you, it should be tailored to your style, your needs, your particular ways.",
-  author: "Habit 3: Put First Things First"});
-  QuotesList.insert({saying: "Understand your ultimate destination. Begin today with the image of the end of your life as your frame of reference by which everything else is examined. Each day will then contribute to the vision you have of your life as a whole.",
-  author: "Habit 2: Begin with the End in Mind"});
-  QuotesList.insert({saying: "Wisdom is your perspective on life, your sense of balance, your understanding of how the various parts and principles apply and relate to each other. It embraces judgment, discernment, comprehension; It is a gestalt or oneness, an integrated wholeness.",
-  author: "Habit 2: Begin with the End in Mind"});
+  QuotesList.insert({saying: "Wherever you go, go with all your heart.",
+  author: "Confucius"});
+  QuotesList.insert({saying: "Don't wait. The time will never be right.",
+  author: "Napoleon Hill"});
+  QuotesList.insert({saying: "Whatever you are, be a good one.",
+  author: "Abraham Lincoln"});
+  QuotesList.insert({saying: "Ever tried. Ever failed. No matter. Try again. Fail again. Fail better.",
+  author: "Samuel Beckett"});
+  QuotesList.insert({saying: "We become what we think about.",
+  author: "Earl Nightingale"});
+  QuotesList.insert({saying: "Do what you can, with what you have, where you are.",
+  author: "Theodore Roosevelt"});
+  QuotesList.insert({saying: "An obstacle is often a stepping stone.",
+  author: "Prescott Bush"});
+  QuotesList.insert({saying: "Action is the foundational key to all success.",
+  author: "Pablo Picasso"});
+  QuotesList.insert({saying: "Be not afraid of going slowly, be afraid only of standing still.",
+  author: "Chinese proverb"});
+  QuotesList.insert({saying: "The ox is slow but the earth is patient.",
+  author: "Chinese proverb"});
+  QuotesList.insert({saying: "Do one thing everyday that scares you",
+  author: "Eleanor Roosevelt"});
+  QuotesList.insert({saying: "Believe you can and you're halfway there.",
+  author: "Theodore Roosevelt"});
+  QuotesList.insert({saying: "The obstacle is the path.",
+  author: "Ryan Holiday"});
+  QuotesList.insert({saying: "Nothing works if you don't",
+  author: "Maya Angelou"});
+  QuotesList.insert({saying: "Success is going from failure to failure without loss of enthusiasm.",
+  author: "Winston Churchill"});
+  QuotesList.insert({saying: "If you really look closely, most overnight successes took a long time.",
+  author: "Steve Jobs"});
 }

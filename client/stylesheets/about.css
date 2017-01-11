@@ -6,8 +6,11 @@ div#about_background {
 
 	background:rgba(0, 0, 0, 0.7);
 	border: 2px solid black;
-	width:500px;
-	height:600px;
+	width:50%;
+	height:80%;
+	position: absolute;
+	top: 10%;
+	left: 25%;
 }
 
 div#about_background h1{

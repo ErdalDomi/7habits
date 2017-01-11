@@ -7,13 +7,20 @@
         <h1> 7 Habits of Highly Effective People</h1>
         <br>
         <br>
-        {{> quotes}}
-        <div id="signin" style="display: inline-block;">
-        <a class="btn btn-default btn-block modalButton" role="button" data-toggle="modal" data-target="#loginModal">Sign in</a>
+        
+        <div class="quotes">
+          {{> quotes}}          
         </div>
-        <div>
-        <p>Don't have an account? <br>Register<a data-toggle="modal" data-target="#registerModal"> <span style="color: #FFCF79"> here. </span></a></p>
+
+        <div class="signInBlock">
+          <div id="signin" style="display: inline-block;">
+          <a class="btn btn-default btn-block modalButton" role="button" data-toggle="modal" data-target="#loginModal">Sign in</a>
+          </div>
+          <div>
+          <p>Don't have an account? <br>Register<a data-toggle="modal" data-target="#registerModal"> <span style="color: #FFCF79"> here. </span></a></p>
+          </div>          
         </div>
+        
       </div>
     </div>
   </div>

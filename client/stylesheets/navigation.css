@@ -4,6 +4,9 @@
     padding: 0;
     overflow: hidden;
     background-color: #333333;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .options {
@@ -41,9 +44,6 @@ li.selected a {
  }
 
 #footer {
-  /*height: 40px;
-  background:#333333;
-  text-align:center;*/
      clear: both;
     border: 1px groove #aaaaaa;
     background: #333333;
