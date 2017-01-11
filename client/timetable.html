@@ -1,9 +1,6 @@
 <template name="timetable">
 	<div class="leftSide">
-		<ul>
-			<li>a</li>
-			<li>b</li>
-		</ul>
+
 	</div>
 	<div class="rightSide">
 	  <div id="calendar"></div>
@@ -24,14 +21,38 @@
     </div>
 </div>
 
-<div id="popupEventForm" class="modal">
-    <div class="modal-dialog">
-        <div class="modal-header">
-            <form>
-                <label>Event Title:</label>
-                <input type="text" id="eventTitle">
-            </form>
+<div id="popupEventForm" class="modal fade">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Create Event</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="eventTitle">Name:</label>
+          <input type="text" class="form-control" id="eventTitle">
         </div>
+        <div class="form-group">
+          <label for="eventDate">Event Date:</label>
+          <input type="date" class="form-control" id="eventDate">
+        </div>
+        <div class="form-group">
+          <label for="eventTime">Event Time:</label>
+          <input type="time" class="form-control" id="eventTime">
+        </div>
+        <div class="form-group">
+          <label for="eventDescription">Event Description:</label>
+          <textarea class="form-control" id="eventDescription">Insert description...</textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary saveEvent">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
     </div>
+  </div>
 </div>
 </template>

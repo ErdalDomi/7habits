@@ -1,8 +1,4 @@
 Template.timetable.onRendered(function(){
-    function ShowEventPopup(date) {
-	    $('#popupEventForm').modal('show');
-	    $('#eventTitle').focus();
-	}
 	$('#calendar').fullCalendar({
 		height: 650,
 		contentHeight:'auto',
@@ -79,14 +75,23 @@ Template.timetable.onRendered(function(){
 	      $('#fullCalModal').modal();
    		 },
    		 dayClick: function (date, allDay, jsEvent, view) {
-            $('#eventTitle').val("");
-            $('#eventDate').val($.fullCalendar.formatDate(date, 'dd/MM/yyyy'));
-            $('#eventTime').val($.fullCalendar.formatDate(date, 'HH:mm'));
-            ShowEventPopup(date);
+            $('#popupEventForm').modal('show');
         },
-
-
-
-
 	});
+});
+
+Template.timetable.events({
+	'click .saveEvent': function(event){
+		var title = $("#eventTitle").val();
+        var date = $('#eventDate').val();
+        var time = $('#eventTime').val();
+        var description = $("#eventDescription").val();
+        var events = new Array();
+        event = new Object();
+        event.title = title;
+        event.start = date;
+        event.allDay = false;
+        $('#calendar').fullCalendar('renderEvent', event);
+        console.log("got here");		
+	}
 });
