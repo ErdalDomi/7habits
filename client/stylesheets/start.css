@@ -1,7 +1,8 @@
 div#background-div {
-
+	background: url('/trees2.jpg') no-repeat center center fixed;
+	background-size:cover;
 	height:100%;
-	position:relative;
+	
 }
 
 div#square {
@@ -10,7 +11,7 @@ div#square {
 	background:rgba(0, 0, 0, 0.7);
 	border: 2px solid gray;
 	width:500px;
-	height:700;
+	
 }
 
 div#content{
