@@ -58,3 +58,67 @@ h4 {
  text-align: center;
 }
 
+.btn-primary {
+	background: #b3b3b3;
+}
+
+.btn-primary:hover {
+	background-color: #408000;
+}
+
+.container{
+	position: relative;
+	right: 180px;
+	top: 100px;
+}
+
+.h4_login{
+ border:0 solid #fff; 
+ border-bottom-width:1px;
+ padding-bottom:10px;
+ text-align: center;    
+}
+
+.form-login {
+    background-color: #EDEDED;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.wrapper_login {
+    text-align: center;
+}
+
+.error{
+    color: red;
+}
+
+
+.modal-open #wrap{
+    -webkit-filter: blur(7px);
+    -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter: blur(15px);
+}
+  
+.modal-backdrop {background: #f7f7f7;}
+
+.close {
+    font-size: 50px;
+    display:block;
+}
+
+.h4_login {
+    color:#595959;
+}

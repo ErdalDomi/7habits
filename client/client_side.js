@@ -1,6 +1,4 @@
 
-Session.set('notstarted', true);
-console.log("session is now : "+ Session.get('notstarted'));
 
   $.validator.setDefaults({
     rules: {
