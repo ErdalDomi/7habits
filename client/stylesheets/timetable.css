@@ -10,15 +10,26 @@
 }
 
 .leftSide{
-	float:left;
+	background-color: #f9f9ff;
+	position: fixed;
+	width: 30%;
+	top: 10%;
+	left: 2%;
+	height: 80%;
 }
 
 .rightSide{
-	float:right;
+	background-color: #f9f9ff;
+	position: fixed;
 	width: 65%;
-	margin-right: 30px;
+	top: 10%;
+	right: 2%;
 }
 
 .fc-time-grid .fc-slats td{
 	height: 2.5em;
+}
+
+.fc-widget-header{
+    background-color:#4D9900;
 }

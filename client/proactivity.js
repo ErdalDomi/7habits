@@ -31,5 +31,17 @@ Template.proactivity.helpers({
     {class: "", day: 29},
     {class: "", day: 30}
   ]
-
 });
+
+Template.proactivity.events({
+    'click .advance': function(event){
+        $('.proactivityPrompt').stop().animate({
+          'opacity' : '1'
+        }, 500);;
+        $('.advance').hide();
+    }
+});
+
+Template.proactivity.onRendered(function(){
+    $('.proactivityPrompt').css('opacity','0');
+})

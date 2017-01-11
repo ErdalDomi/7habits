@@ -13,14 +13,13 @@
 }
 
 .ul_progress {
-  margin: auto;
-  height: 0px;
+  height: 30%;
   width: 700px;
+  top: 12%;
+  left:50%;
+  margin-left: -330px;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 400px;
+  vertical-align: center;
   list-style: none;
   padding: 0;
 }
@@ -76,6 +75,23 @@
 }
 
 .advance{
+  position: absolute;
+  top: 65%;
+  left:50%;
+  margin-left: -55px;
+  background: rgba(255,255,255,0.9);
+  border:none;
+}
+
+.advance:hover {
+  background-color: #408000;
+}
+
+
+.proactivityPrompt{
+  width: 100%;
   position: fixed;
-  top: 800px;
+  top: 65%;
+  text-align: center;
+  z-index: -1;
 }

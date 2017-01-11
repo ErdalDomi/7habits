@@ -108,13 +108,14 @@ Template.home.onRendered(function(){
       Router.go('/timetable');
     });
 
-    var habit1Description = "Being proactive means that as human beings, we are responsible for our own lives. Responsibility- 'response-ability - the ability to choose your response is what makes us human. When our behavior begins to be a product of your own choices rather than conditions, then we are proactive.";
+    var habit1Description = "Being proactive means that as human beings, we are responsible for our own lives. Responsibility- 'response-ability - the ability to choose your response is what makes us human. When our behavior begins to be a product of your own choices rather than conditions, then we are proactive."
+    var habit1DescriptionII = "Here you'll find the PROACTIVITY: THE THIRTY-DAY TEST as seen in the book. Each day you'll be able to advance your progress and keep track of it."
     var habit2Description = "Habit 2 is about beginning with the end in mind and it means to start with a clear understanding of your destination. It means to know where you're going so that you better understand where you are now and so that the steps you take are always in the right direction.";
     var habit3Description = "Habit 3 is the fulfillment, the actualization, the natural emergence of Habits 1 and 2. It is the ability to make decision and choices and to act in accordance with them. It is the ability to act rather than to be acted upon.";
-
+    //------------------------habit 1--------------------///
     habit1.mouseover(function(){
       this.animate({fill: lightGreen, cursor: 'pointer'},200);
-      $('.textFull').text(habit1Description)
+      $('.textFull').html(habit1Description+"<br><br>"+habit1DescriptionII);
       $('.textFull').stop().animate({
          'opacity' : '1'
         }, 500);
@@ -126,14 +127,21 @@ Template.home.onRendered(function(){
     });
     text6.mouseover(function(){
       this.attr({fill: darkestGreen, cursor: 'pointer'});
+      $('.textFull').html(habit1Description+"<br><br>"+habit1DescriptionII);
+      $('.textFull').stop().animate({
+         'opacity' : '1'
+        }, 500);
       habit1.animate({fill: lightGreen, cursor: 'pointer'},200);
       }).mouseout(function(){
         habit1.animate({fill: '#fff'},200);
+        $('.textFull').stop().animate({
+          'opacity' : '0'
+        }, 500);
       });
-
+    //---------------------habit 2-----------------------///
     habit2.mouseover(function(){
       this.animate({fill: lightGreen, cursor: 'pointer'},200);
-      $('.textFull').text(habit2Description)
+      $('.textFull').text(habit2Description);
       $('.textFull').stop().animate({
          'opacity' : '1'
         }, 500);
@@ -146,13 +154,20 @@ Template.home.onRendered(function(){
     text7.mouseover(function(){
       this.animate({fill: darkestGreen, cursor: 'pointer'},200);
       habit2.animate({fill: lightGreen, cursor: 'pointer'},200);
+      $('.textFull').text(habit2Description);
+      $('.textFull').stop().animate({
+         'opacity' : '1'
+        }, 500);
       }).mouseout(function(){
         habit2.animate({fill: '#fff'},200);
+        $('.textFull').stop().animate({
+          'opacity' : '0'
+        }, 500);
       });  
-
+    //------------------------habit 3------------------------//
     habit3.mouseover(function(){
       this.animate({fill: lightGreen, cursor: 'pointer'},200);
-      $('.textFull').text(habit3Description)
+      $('.textFull').text(habit3Description);
       $('.textFull').stop().animate({
          'opacity' : '1'
         }, 500);
@@ -165,8 +180,15 @@ Template.home.onRendered(function(){
     text8.mouseover(function(){
       this.attr({fill: darkestGreen, cursor: 'pointer'});
       habit3.animate({fill: lightGreen, cursor: 'pointer'},200);
+      $('.textFull').text(habit3Description);
+      $('.textFull').stop().animate({
+         'opacity' : '1'
+        }, 500);
       }).mouseout(function(){
         habit3.animate({fill: '#fff'},200);
+        $('.textFull').stop().animate({
+          'opacity' : '0'
+        }, 500);
       });    
 
   });

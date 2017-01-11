@@ -1,5 +1,4 @@
 <template name="proactivity">
-<h4 style="text-align: center;">Being proactive means taking responsibility.</h4>
   <div class="dark_background">
     <ul class="ul_progress">
       {{#each days}}
@@ -8,5 +7,11 @@
     </ul>
   </div>
 
-<button type="button" class="btn advance">Advance</button>
+
+{{> proactivityQuote}}
+</template>
+
+<template name="proactivityQuote">
+	<button type="button" class="btn advance btn-lg">Advance</button>
+	<h3 class="proactivityPrompt">Being proactive means taking responsibility.</h3>
 </template>
