@@ -108,43 +108,65 @@ Template.home.onRendered(function(){
       Router.go('/timetable');
     });
 
+    var habit1Description = "Being proactive means that as human beings, we are responsible for our own lives. Responsibility- 'response-ability - the ability to choose your response is what makes us human. When our behavior begins to be a product of your own choices rather than conditions, then we are proactive.";
+    var habit2Description = "Habit 2 is about beginning with the end in mind and it means to start with a clear understanding of your destination. It means to know where you're going so that you better understand where you are now and so that the steps you take are always in the right direction.";
+    var habit3Description = "Habit 3 is the fulfillment, the actualization, the natural emergence of Habits 1 and 2. It is the ability to make decision and choices and to act in accordance with them. It is the ability to act rather than to be acted upon.";
+
     habit1.mouseover(function(){
-      this.attr({fill: lightGreen, cursor: 'pointer'});
+      this.animate({fill: lightGreen, cursor: 'pointer'},200);
+      $('.textFull').text(habit1Description)
+      $('.textFull').stop().animate({
+         'opacity' : '1'
+        }, 500);
       }).mouseout(function(){
-        this.attr({fill: '#fff'});
+        this.animate({fill: '#fff'},200);
+        $('.textFull').stop().animate({
+          'opacity' : '0'
+        }, 500);
     });
     text6.mouseover(function(){
       this.attr({fill: darkestGreen, cursor: 'pointer'});
-      habit1.attr({fill: lightGreen, cursor: 'pointer'});
+      habit1.animate({fill: lightGreen, cursor: 'pointer'},200);
       }).mouseout(function(){
-        this.attr({fill: '#000'});
-        habit1.attr({fill: '#000'});
+        habit1.animate({fill: '#fff'},200);
       });
 
     habit2.mouseover(function(){
-      this.attr({fill: lightGreen, cursor: 'pointer'});
+      this.animate({fill: lightGreen, cursor: 'pointer'},200);
+      $('.textFull').text(habit2Description)
+      $('.textFull').stop().animate({
+         'opacity' : '1'
+        }, 500);
       }).mouseout(function(){
-        this.attr({fill: '#fff'});
+        this.animate({fill: '#fff'},200);
+        $('.textFull').stop().animate({
+          'opacity' : '0'
+        }, 500);
     });
     text7.mouseover(function(){
-      this.attr({fill: darkestGreen, cursor: 'pointer'});
-      habit2.attr({fill: lightGreen, cursor: 'pointer'});
+      this.animate({fill: darkestGreen, cursor: 'pointer'},200);
+      habit2.animate({fill: lightGreen, cursor: 'pointer'},200);
       }).mouseout(function(){
-        this.attr({fill: '#000'});
-        habit2.attr({fill: '#000'});
+        habit2.animate({fill: '#fff'},200);
       });  
 
     habit3.mouseover(function(){
-      this.attr({fill: lightGreen, cursor: 'pointer'});
+      this.animate({fill: lightGreen, cursor: 'pointer'},200);
+      $('.textFull').text(habit3Description)
+      $('.textFull').stop().animate({
+         'opacity' : '1'
+        }, 500);
       }).mouseout(function(){
-        this.attr({fill: '#fff'});
+        this.animate({fill: '#fff'},200);
+        $('.textFull').stop().animate({
+          'opacity' : '0'
+        }, 500);
     });
     text8.mouseover(function(){
       this.attr({fill: darkestGreen, cursor: 'pointer'});
-      habit3.attr({fill: lightGreen, cursor: 'pointer'});
+      habit3.animate({fill: lightGreen, cursor: 'pointer'},200);
       }).mouseout(function(){
-        this.attr({fill: '#000'});
-        habit3.attr({fill: '#000'});
+        habit3.animate({fill: '#fff'},200);
       });    
 
   });
