@@ -1,9 +1,10 @@
 <template name="login">
 
-<div class="container_login">
+<div class="container">
     <div class="row">
         <div class="col-md-offset-5 col-md-3">
             <div class="form-login">
+            <div id="output"></div>
             <h4 class="h4_login">Welcome back.</h4>
               <form class="login">
                 <input type="email" name="email" required class="form-control input-sm chat-input" placeholder="username" />
@@ -12,7 +13,7 @@
                 <br>              
                 <div class="wrapper_login">
                 <span class="group-btn">     
-                    <input type="submit" value="LOGIN" class="btn btn-primary btn-md"> <span class="fa fa-sign-in"></span>
+                    <input type="submit" value="LOGIN" class="btn btn-primary btn-md">
                 </span>
                 </div>
               </form>
@@ -22,20 +23,4 @@
     </div>
 </div>
 
-
- <!-- <div id="login_background">
-
-  <div id="login_heading">
-    <div id="login_heading2">
-        <h3>Login Form</h3>
-          <div id="login_form">
-            <form class="login">
-                  <p>Email: <input type="email" name="email" required></p>
-                  <p>Password: <input type="password" name="password" required></p>
-                  <p><input type="submit" value="Login"></p>
-              </form>
-          </div>
-      </div>
-   </div>
-  </div> -->
 </template>

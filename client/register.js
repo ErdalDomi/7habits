@@ -8,6 +8,15 @@ Template.register.events({
 });
 
 Template.register.onRendered(function(){
+  $(".reveal").mousedown(function() {
+    $(".pwd").replaceWith($('.pwd').clone().attr('type', 'text'));
+  })
+  .mouseup(function() {
+    $(".pwd").replaceWith($('.pwd').clone().attr('type', 'password'));
+  })
+  .mouseout(function() {
+    $(".pwd").replaceWith($('.pwd').clone().attr('type', 'password'));
+  });
     var validator = $('.register').validate({
     submitHandler: function(event){
       var email = $('[name=email]').val();

@@ -1,6 +1,5 @@
 Template.login.events({
   'submit form': function(event){
-    console.log("you clicked login");
     event.preventDefault();
     /*
 
@@ -12,6 +11,7 @@ Template.login.onCreated(function(){
   console.log("The 'login' template was just created.");
 });
 Template.login.onRendered(function(){
+  console.log("starting evaluation");
   var validator = $('.login').validate({
     submitHandler: function(event){
       var email = $('[name=email]').val();
