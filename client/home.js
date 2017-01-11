@@ -60,7 +60,7 @@ Template.home.onRendered(function(){
     var topSmallTrigRightX = circleCenter*5/4;
     var topSmallTrigRightY = topSmallTrigLeftY;
     //draw top small trig
-    var topSmallTrig = s.polygon(topSmallTrigTopX,topSmallTrigTopY,topSmallTrigLeftX,topSmallTrigLeftY,topSmallTrigRightX,topSmallTrigRightY).attr({stroke:lightGreen, fill:"#fff", strokeWidth:2});
+    var topSmallTrig = s.polygon(topSmallTrigTopX,topSmallTrigTopY,topSmallTrigLeftX,topSmallTrigLeftY,topSmallTrigRightX,topSmallTrigRightY).attr({stroke:lightGreen, fill:lighterGreen, strokeWidth:2});
     //bottom small trig
     var bottomSmallTrigBottomX = circleCenter;
     var bottomSmallTrigBottomY = bottomRectY;
@@ -69,7 +69,7 @@ Template.home.onRendered(function(){
     var bottomSmallTrigRightX = circleCenter*5/4+1;
     var bottomSmallTrigRightY = bottomSmallTrigLeftY;
     //draw bottom small trig
-    var bottomSmallTrig = s.polygon(bottomSmallTrigBottomX,bottomSmallTrigBottomY,bottomSmallTrigLeftX,bottomSmallTrigLeftY,bottomSmallTrigRightX,bottomSmallTrigRightY).attr({stroke: "#006600", fill: "#fff"});
+    var bottomSmallTrig = s.polygon(bottomSmallTrigBottomX,bottomSmallTrigBottomY,bottomSmallTrigLeftX,bottomSmallTrigLeftY,bottomSmallTrigRightX,bottomSmallTrigRightY).attr({stroke: "#006600", fill: lighterGreen});
     //habits: 
     var habit1 = s.polygon(RectX+2,bottomRectY,bottomSmallTrigBottomX,bottomSmallTrigBottomY,bottomSmallTrigLeftX,bottomSmallTrigLeftY).attr({stroke: lightGreen, strokeWidth: 2,fill: "#fff"});
     var habit2 = s.polygon(circleCenter,bottomSmallTrigBottomY,RectX+RectWidth-2,bottomSmallTrigBottomY,bottomSmallTrigRightX,bottomSmallTrigRightY).attr({stroke: lightGreen, strokeWidth: 2,fill: "#fff"});

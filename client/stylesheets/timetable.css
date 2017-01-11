@@ -1,0 +1,24 @@
+#calendar {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+}
+	 
+.centered {
+	text-align: center;
+}
+
+.leftSide{
+	float:left;
+}
+
+.rightSide{
+	float:right;
+	width: 65%;
+	margin-right: 30px;
+}
+
+.fc-time-grid .fc-slats td{
+	height: 2.5em;
+}
