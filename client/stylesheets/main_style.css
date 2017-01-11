@@ -1,17 +1,13 @@
 body {
-	background: -webkit-radial-gradient(center, ellipse cover,  rgba(204, 255, 153, 1) 0%,rgba(255, 255, 255, 1) 100%);
-}
-
-.btn {
-    padding: 9px 15px;
-    border: 0 none;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+	/*background: -webkit-radial-gradient(center, ellipse cover,  rgba(204, 255, 153, 1) 0%,rgba(255, 255, 255, 1) 100%);*/
+	background: rgba(204, 255, 153, 1);
 }
 
 
-
+.Copyright{
+	margin-top: 10px;
+	font-size: medium;
+}
 
 
 

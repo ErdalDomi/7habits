@@ -1,8 +1,8 @@
-div#background-div {
-	background: url('/trees2.jpg') no-repeat center center fixed;
-	background-size:cover;
-	height:100%;
-	
+#background-div {
+/*	background: url('/trees2.jpg') no-repeat center center fixed;
+	background-size:cover;*/
+	top: 0;
+	bottom: 0;
 }
 
 div#square {
@@ -91,6 +91,18 @@ h4 {
     box-shadow:0 1px 0 #cfcfcf;
 }
 
+.form-register {
+    background-color: #EDEDED;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+}
+
 .form-control {
     border-radius: 10px;
 }
@@ -125,4 +137,9 @@ h4 {
 
 .quotes{
     height: 445px;
+}
+
+.reveal{
+	background-color: #ededed;
+	border: none;
 }

@@ -4,13 +4,14 @@ div#about_background2{
 
 div#about_background {
 
-	background:rgba(0, 0, 0, 0.7);
+	background:rgba(0, 0, 0, 0.6);
 	border: 2px solid black;
 	width:50%;
 	height:80%;
 	position: absolute;
 	top: 10%;
 	left: 25%;
+	overflow-y: scroll;
 }
 
 div#about_background h1{
@@ -34,3 +35,10 @@ div#about_content p {
 	font-size: 17px;
 }
 
+.contentTitle{
+	color: #ddd;
+}
+
+.contentText{
+	color: #fff;
+}
