@@ -1,4 +1,4 @@
-ul {
+.navbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -6,12 +6,12 @@ ul {
     background-color: #333333;
 }
 
-li {
+.options {
     float: left;
 
 }
 
-li a {
+.options a {
     display: block;
     color: white;
     text-align: center;
@@ -20,7 +20,7 @@ li a {
 }
 
 
-li.options a:hover {
+.options a:hover {
     background-color: #111;
     color:white;
     text-decoration: none;
@@ -42,7 +42,7 @@ li.selected a {
 	text-decoration: none;
  }
 
-.footer {
+/*.footer {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -50,4 +50,21 @@ li.selected a {
   padding: 1rem;
   background-color: #333333;
   text-align: center;
+} */
+
+
+.page_wrap {
+  min-height: 100%;
+  margin-bottom: -40px; 
+}
+.page_wrap:after {
+  content: "";
+  display: block;
+}
+.site_footer, .page_wrap:after {
+  height: 40px; 
+}
+.site_footer {
+  background: #333333;
+  text-align:center;
 }

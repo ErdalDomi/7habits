@@ -1,8 +1,22 @@
-div#aboutBackground {
+div#about_background {
+	position:relative;
 	margin-top: 2cm;
 	margin-bottom: 2cm;
 	background:rgba(0, 0, 0, 0.7);
-	border: 2px solid gray;
+	border: 2px solid black;
 	width:500px;
-	height:700;
+	height:550px;
 }
+
+div#about_background h1{
+	text-align: center;
+	color: #FFCF79;
+}
+
+div#about_content {
+	border-top: 2px solid white;
+	margin-right: 20px;
+	margin-left: 20px;
+} 
+
+
