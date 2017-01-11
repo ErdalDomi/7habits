@@ -60,6 +60,7 @@ h4 {
 
 .btn-primary {
 	background: #b3b3b3;
+	border:none;
 }
 
 .btn-primary:hover {
@@ -78,6 +79,8 @@ h4 {
  padding-bottom:10px;
  text-align: center;    
 }
+
+
 
 .form-login {
     background-color: #EDEDED;
@@ -133,6 +136,10 @@ h4 {
 
 .h4_login {
     color:#595959;
+}
+
+.h4_register {
+	color:#595959;
 }
 
 .quotes{
