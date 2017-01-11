@@ -28,23 +28,26 @@ Template.start.onRendered(function(){
         console.log("login with pass");
         if (error) {
           console.log("error");
+          console.log(error);
           if (error.reason == "User not found") {
+            console.log("user not found error");
             validator.showErrors({
-              email: "That email doesn't belong to a registered user."
+              'login-email': "That email doesn't belong to a registered user."
             });
+            console.log("shit");
           }
           if (error.reason == "Incorrect password") {
             validator.showErrors({
-              password: "You entered an incorrect password."
+              'login-password': "You entered an incorrect password."
             });
           }
 
         } else {
           var currentRoute = Router.current().route.getName();
           if (currentRoute == "start") {
-            $('.modal').on("hidden.bs.modal", function(){
-            $("#loginModal").html("");
-          });
+            $("#loginModal").modal("hide");
+            $('body').removeClass('modal-open');
+            $('.modal-backdrop').remove();
             Router.go("home");
           }
         }
@@ -62,13 +65,13 @@ Template.start.onRendered(function(){
         if (error) {
           if(error.reason == "Email already exists."){
             registerValidator.showErrors({
-              email: "That email already belongs to a registered user."
+              'register-email': "That email already belongs to a registered user."
             });
           }
         } else {
-          $('.modal').on("hidden.bs.modal", function(){
-            $("#registerModal").html("");
-          });
+          $("#registerModal").modal("hide");
+          $('body').removeClass('modal-open');
+          $('.modal-backdrop').remove();
           Router.go("home"); //Redirect if user registration succeeds
         }
       });
