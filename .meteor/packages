@@ -30,3 +30,5 @@ mirageglobe:snapsvgcdn
 barbatus:scss-compiler
 mrt:modernizr-meteor
 rzymek:fullcalendar
+aldeed:simple-schema
+aldeed:collection2
