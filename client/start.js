@@ -12,7 +12,7 @@ Template.start.events({
 Template.start.onRendered(function(){
 
   $(".reveal").mousedown(function() {
-    $(".pwd").replaceWith($('.pwd').clone().attr('type', 'text'));
+    $(".pwd").replaceWith($('.pwd').clone().attr('type', 'email'));
   }).mouseup(function() {
     $(".pwd").replaceWith($('.pwd').clone().attr('type', 'password'));
   }).mouseout(function() {

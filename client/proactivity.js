@@ -9,6 +9,9 @@ Template.proactivity.events({
         $('.proactivityPrompt').stop().animate({
           'opacity' : '1'
         }, 500);
+        $('.proactivityExplain').stop().animate({
+          'opacity' : '1'
+        }, 800);
         $('.advance').hide();
 
         var doc = ProgressList.findOne({class:'current'});
@@ -24,4 +27,5 @@ Template.proactivity.onRendered(function(){
     ProgressList.update({_id:"88TiHgWpKxLH4yivK"},{$set:{class:'none'}});
     console.log(ProgressList.find({}).fetch());
     $('.proactivityPrompt').css('opacity','0');
+    $('.proactivityExplain').css('opacity','0');
 })

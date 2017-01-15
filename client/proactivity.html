@@ -1,17 +1,23 @@
 <template name="proactivity">
-  <div class="dark_background">
+<div>
+	<div class="proactivityTitle">
+		<h2>30 day test progress</h2>
+	</div>
     <ul class="ul_progress">
       {{#each days}}
         <li class="li_progress {{class}}"></li>
       {{/each}}
-    </ul>
-  </div>
+    </ul>	
+</div>
 
+<div>
+	{{> proactivityQuote}}
+</div>
 
-{{> proactivityQuote}}
 </template>
 
 <template name="proactivityQuote">
 	<button type="button" class="btn advance btn-lg">Advance</button>
 	<h3 class="proactivityPrompt">Being proactive means taking responsibility.</h3>
+	<p class="proactivityExplain">You've completed the check for today. Turn again tomorrow to complete the next day.</p>
 </template>

@@ -1,4 +1,15 @@
-/**/.dark_background{
+.proactivityTitle{
+  position:relative;
+  width: 100%;
+  height: 20%;
+  top: 70px;
+}
+
+.proactivityTitle h2{
+  text-align: center;
+}
+
+.dark_background{
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -15,7 +26,7 @@
 .ul_progress {
   height: 30%;
   width: 700px;
-  top: 12%;
+  top: 120px;
   left:50%;
   margin-left: -330px;
   position: fixed;
@@ -76,7 +87,7 @@
 
 .advance{
   position: absolute;
-  top: 65%;
+  top: 450px;
   left:50%;
   margin-left: -55px;
   background: rgba(255,255,255,0.9);
@@ -94,7 +105,15 @@
 .proactivityPrompt{
   width: 100%;
   position: fixed;
-  top: 65%;
+  top: 450px;
+  text-align: center;
+  z-index: -1;
+}
+
+.proactivityExplain{
+  width: 100%;
+  position: fixed;
+  top: 520px;
   text-align: center;
   z-index: -1;
 }

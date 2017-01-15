@@ -1,10 +1,79 @@
 <template name="timetable">
-	<div class="leftSide">
-
-	</div>
-	<div class="rightSide">
-	  <div id="calendar"></div>
+<div class="leftSide">
+ <div class="weeklyPriorities">
+  <div class="weeklyDescription">
+    <h4 id="weeklyDescriptionTitle">Week of:</h4>
   </div>
+  <div id="priorityTitle">
+    <h4>Weekly priorities</h4>
+  </div>
+  <div id='external-events'>
+    <div id='external-events-listing'>
+      <div class='fc-event'>My Event 1</div>
+      <div class='fc-event'>My Event 2</div>
+      <div class='fc-event'>My Event 3</div>
+      <div class='fc-event'>My Event 4</div>
+      <div class='fc-event'>My Event 5</div>
+    </div>
+    <p>
+      <input type='checkbox' id='drop-remove' checked='checked' />
+      <label for='drop-remove'>remove after drop</label>
+    </p>
+  </div>
+ </div> 
+ <div class="rolesGoals">
+  <h4 style="height: 63px; border-bottom: 1px solid #ccc;">The WEEKLY WORKSHEET TM</h4>
+  <div class="rolesDiv">
+    <h5 class="weeklyHeaders">Roles:</h5>
+    <div style="width: 100%; height: 110px;">
+      <input type="text" id="goalInput" placeholder="Role 1..."> 
+    </div>
+    <div style="width: 100%;height: 110px;">
+      <input type="text" id="goalInput" placeholder="Role 2..."> 
+    </div>
+    <div style="width: 100%;height: 110px;">
+      <input type="text" id="goalInput" placeholder="Role 3..."> 
+    </div>
+    <div style="width: 100%;height: 110px;">
+      <input type="text" id="goalInput" placeholder="Role 4..."> 
+    </div>
+    <div style="width: 100%;height: 110px;">
+      <input type="text" id="goalInput" placeholder="Role 5..."> 
+    </div>     
+  </div>
+ 
+  <div class="goalsDiv">
+    <h5 class="weeklyHeaders">Goals:</h5>
+
+    <input type="text" id="goalInput" placeholder="Goal 1..."> 
+    <input type="text" id="goalInput" placeholder="Goal 2..."> 
+    <input type="text" id="goalInput" placeholder="Goal 3..."> 
+    <input type="text" id="goalInput" placeholder="Goal 4..." style="margin-bottom: 18px;">
+
+    <input type="text" id="goalInput" placeholder="Goal 1..."> 
+    <input type="text" id="goalInput" placeholder="Goal 2..."> 
+    <input type="text" id="goalInput" placeholder="Goal 3..."> 
+    <input type="text" id="goalInput" placeholder="Goal 4..." style="margin-bottom: 18px;">
+    <input type="text" id="goalInput" placeholder="Goal 1..."> 
+    <input type="text" id="goalInput" placeholder="Goal 2..."> 
+    <input type="text" id="goalInput" placeholder="Goal 3..."> 
+    <input type="text" id="goalInput" placeholder="Goal 4..." style="margin-bottom: 18px;">
+    <input type="text" id="goalInput" placeholder="Goal 1..."> 
+    <input type="text" id="goalInput" placeholder="Goal 2..."> 
+    <input type="text" id="goalInput" placeholder="Goal 3..."> 
+    <input type="text" id="goalInput" placeholder="Goal 4..." style="margin-bottom: 18px;">   
+    <input type="text" id="goalInput" placeholder="Goal 1..."> 
+    <input type="text" id="goalInput" placeholder="Goal 2..."> 
+    <input type="text" id="goalInput" placeholder="Goal 3..."> 
+    <input type="text" id="goalInput" placeholder="Goal 4..." style="margin-bottom: 18px;">       
+  </div>
+ </div> 
+ </div>
+
+
+<div class="rightSide">
+  <div id="calendar"></div>
+</div>
 
 <div id="fullCalModal" class="modal fade">
     <div class="modal-dialog">

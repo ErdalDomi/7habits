@@ -6,11 +6,11 @@ div#about_background {
 
 	background:rgba(0, 0, 0, 0.6);
 	border: 2px solid black;
-	width:50%;
+	width:80%;
 	height:80%;
 	position: absolute;
-	top: 10%;
-	left: 25%;
+	top: 100px;
+	left: 10%;
 	overflow-y: scroll;
 }
 

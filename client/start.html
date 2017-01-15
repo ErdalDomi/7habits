@@ -1,8 +1,8 @@
 
 <template name="start">
-  <div id="background-div" style="text-align: center;">
-  <div id="wrap">
-    <div id="square" style="display: inline-block;">
+
+<div id="" style="text-align: center;">
+  <div id="square" style="display: inline-block;">
       <div id="content" style="display: inline-block;">
         <h1> 7 Habits of Highly Effective People</h1>
         <br>
@@ -22,80 +22,41 @@
         </div>
         
       </div>
-    </div>
   </div>
-  </div>
+</div>
 
 
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3 text-center">
-        <br><br>
-        <div class="container">
-          <div class="row">
-              <div class="col-md-offset-5 col-md-3">
-                  <div class="form-login">
-                  <div id="output"></div>
-                  <h4 class="h4_login">Welcome</h4>
-                    <form class="login">
-                      <input type="email" name="login-email" required class="form-control input-sm chat-input" placeholder="username" />
-                      <br>
-                      <input type="password" name="login-password" required class="form-control input-sm chat-input" placeholder="password" />
-                      <br>              
-                      <div class="wrapper_login">
-                      <span class="group-btn">
-                          <br>     
-                          <input type="submit" value="LOGIN" class="btn btn-primary btn-md">
-                      </span>
-                      </div>
-                    </form>
-                  </div>
-              
-              </div>
-          </div>
-        </div>
-      </div>
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container" style="margin-top: 160px">
+      <h1>Login to Your Account</h1><br>
+      <form class="login">
+        <input type="email" name="login-email" placeholder="E-mail" required>
+        <input type="password" name="login-password" placeholder="Password" required>
+        <input type="submit" class="login loginmodal-submit" value="Login">
+      </form>
     </div>
   </div>
 </div>
 
-<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3 text-center">        
-        <br><br>
-        <div class="container">
-          <div class="row">
-           <div class="col-md-offset-5 col-md-3">
-            <div class="form-register">
-            <h4 class="h4_register">Register</h4>
-              <form class="register">
-                <input type="email" name="register-email" required class="form-control input-sm chat-input" placeholder="username" />
-                <br>
-                <div class="input-group">
-                    <input type="password" name="register-password" required class="form-control input-sm chat-input pwd" placeholder="password" />
-                    <span class="input-group-btn">
-                    <button class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open"></i></button>
-                    </span>
-                <br>
-                </div>                              
-                <div class="wrapper_register">
-                <span class="group-btn"> 
-                    <br>    
-                    <input type="submit" value="REGISTER" class="btn btn-primary btn-md">
-                </span>
-                </div>
-              </form>
-            </div>
-        
-                </div>
-            </div>
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container" style="margin-top: 160px">
+      <h1>Register Your Account</h1><br>
+      <form class="register">
+        <input type="email" name="register-email" placeholder="E-mail" required>
+        <div class="input-group">
+        <input type="password" name="register-password" placeholder="Password" class="pwd" required>
+        <span class="input-group-btn">
+          <button class="btn btn-default reveal" type="button" style="margin-left:2px;"><i class="glyphicon glyphicon-eye-open" ></i></button>
+        </span>
         </div>
-      </div>
+
+        <input type="submit" class="register loginmodal-submit" value="Register">
+      </form>
     </div>
   </div>
 </div>
-
 
 </template>
