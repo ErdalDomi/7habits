@@ -1,3 +1,4 @@
+//where events will be stored to be fetched by the calendar
 var eventsArray = [];
 
 Template.timetable.onRendered(function(){
@@ -20,8 +21,9 @@ Template.timetable.onRendered(function(){
 
 		});	
 
-	},500);//timer to wait for templates to render and fetch data from db, otherwise they wont initialize
+	},500);//timer to wait for templates to render and fetch data from db, otherwise they won't initialize
 
+	//this function checks if we're dropping the event outside the calendar
     var isEventOverDiv = function(x, y) {
 
         var external_events = $( '#external-events' );
@@ -38,13 +40,12 @@ Template.timetable.onRendered(function(){
 
     }
 
+    //this function checks if we're dropping the event in the trash
     $('.deleteDiv').droppable({
         drop: function(event, ui) {
             ui.draggable.remove();
             var deleteTitle = $(ui.draggable).text();
-            console.log(deleteTitle);
             elementId = Priorities.findOne({title: deleteTitle})._id;
-            console.log(elementId)
             Priorities.remove({_id: elementId});
         }
     });
@@ -54,7 +55,7 @@ Template.timetable.onRendered(function(){
     -----------------------------------------------------------------*/
 
     $('#calendar').fullCalendar({
-    	events: eventsArray,
+    	events: eventsArray, //where the events come from
     	height: 650,
 		contentHeight:'auto',
 		slotDuration:'00:60:00',
@@ -67,13 +68,13 @@ Template.timetable.onRendered(function(){
 		maxTime: "23:00:00",
 		defaultView: 'agendaWeek',
 		allDayText: 'Today\'s \npriorities',
-        editable: true,
+        editable: true, //this allows events to be resized
         eventLimit: true,
         droppable: true, // this allows things to be dropped onto the calendar
         dragRevertDuration: 0,
         drop: function(date) {
+        	//droping an event from the priorities list to the calendar
         	deleteTitle= this.innerHTML;
-        	console.log(this.innerHTML);
 			insertStart=date.format();
 			defaultDuration = moment.duration($('#calendar').fullCalendar('option', 'defaultTimedEventDuration'));
 			insertEnd = date.add(defaultDuration); // on drop we only have date given to us
@@ -92,7 +93,7 @@ Template.timetable.onRendered(function(){
             	color: insertColor,
             	description: insertDescription
             });
-
+            //after inserting it into the events collection, remove it from priorities collection to avoid duplicates
             Priorities.remove({_id:elementId});
 
 			if ($('#drop-remove').is(':checked')) {
@@ -104,25 +105,19 @@ Template.timetable.onRendered(function(){
         eventDragStart: function (event) {
         	Session.set('beforeDragStart', event.start.format());
         },
-
+        //changing the event slot 
         eventDrop: function(event){
-    		console.log("doing update");
     		calendarEventTitle = event.title;
-    		console.log(event.title);
     		calendarnewEventStart = event.start.format();
     		calendarnewEventEnd = event.start.format();
     		calendaroldEventStart = Session.get('beforeDragStart');
-    		console.log("old event start:"+calendaroldEventStart);
-    		console.log("new event start:"+calendarnewEventStart);
-
     		calendarEventId = Events.findOne({title:calendarEventTitle, start: calendaroldEventStart})._id;
     		Events.update({_id:calendarEventId},{$set:{start:calendarnewEventStart,end:calendarnewEventEnd}});
-    		console.log("start should now be: "+Events.findOne({_id:calendarEventId}).start);  
+
         },
         eventDragStop: function( event, jsEvent, ui, view ) { 
-
+        	//this piece of code activates when we send an event from the calendar back to the priorities list
             if(isEventOverDiv(jsEvent.clientX, jsEvent.clientY)) {
-            	console.log("is outside calendar");
                 $('#calendar').fullCalendar('removeEvents', event._id);
 	        	calendarEventTitle = event.title;
 	        	calendarEventStart = event.start.format();
@@ -133,24 +128,27 @@ Template.timetable.onRendered(function(){
 	        	Meteor._reload.reload();
             }
         },
+        //clicking an event to bring up the modal
 	    eventClick:  function(event, jsEvent, view) {
 		      $('#modalTitle').html(event.title);
 		      $('#modalBody').html(event.description);
 		      $('#eventUrl').attr('href',event.url);
 		      $('#fullCalModal').modal();
 	   	},
+	   	//resizing the event duration
 		eventResize: function(event,delta) {
 			eventEnd = event.end.format();
 	        eventStart = event.start.format();
 	        eventTitle = event.title;
 	        desiredEventId = Events.findOne({title:eventTitle,start:eventStart})._id;
 	        Events.update({_id:desiredEventId},{$set:{end: eventEnd}});
-	        console.log(Events.findOne({_id:desiredEventId}).end);
 	        $('#calendar').fullCalendar('updateEvent', event);
 	    }
 	});
 });
 
+//By setting these session variables we're able to dynamically modify the HTML so we can
+//access the addEvent template
 Template.timetable.events({
 	'click .eventButton': function(event){
 		Session.set('addEvent', true);
@@ -204,7 +202,7 @@ Template.goalItems.events({
 	}
 });
 
-
+//Adding an event
 Template.addEvent.events({
 	'click .addEvent':function(event){
 		event.preventDefault();
@@ -218,15 +216,14 @@ Template.addEvent.events({
 		Session.set('addEvent', false);
 		console.log("refreshing...");
 		Meteor._reload.reload();
-		//Router.current().render(Template.timetable);
 	}
 });
 
 Template.weeklyPrioritiesTemplate.helpers({
 	'priorities' : function(){
-		//Router.current().render(Template.timetable);
 		return Priorities.find().fetch();
 	},
+	//in this part we fetch the events from the Events collection so the calendar can access them through a global array
 	'fetchEvents' : function(){
 		events=[];
 		Events.find().fetch().forEach(function(currentValue, index){

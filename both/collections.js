@@ -1,3 +1,7 @@
+/**
+*These are the Collection definitions of the database.
+*/
+
 QuotesList = new Mongo.Collection('quotes');
 ProgressList = new Mongo.Collection('progress');
 MissionsList = new Mongo.Collection('missions');

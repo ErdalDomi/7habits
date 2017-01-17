@@ -1,16 +1,21 @@
+/*The form submission validation is performed by the login validator.
+* this is a jquery library that offers the functionality. That's why
+* we simply prevent the form from submitting and handle the validation
+* in the onRendered template.
+*/
 Template.start.events({
   'submit form': function(event){
     event.preventDefault();
-    /*
 
-    */
   }
 });
 
 
-
+/*Creating an account is a sensitive thing that's why we use Meteor's
+* own functions to handle the user registration and log-in.
+* When the user logs in or register, they're redirected to the home page */
 Template.start.onRendered(function(){
-
+/*Making password visible when clicking the 'spy' button*/
   $(".reveal").mousedown(function() {
     $(".pwd").replaceWith($('.pwd').clone().attr('type', 'email'));
   }).mouseup(function() {
@@ -53,7 +58,9 @@ Template.start.onRendered(function(){
       });
     }
   });
-
+/*This part of the code is responsible for setting up the initial data the users will find in their accounts.
+* Namely, the progress will be zeroed, a placeholder will appeare in the textarea mission statement, 
+* and all the roles and goals will be defaulted to an empty value.*/
   settingUpAccount = function(){
     var currentUser = Meteor.userId();
     if(ProgressList.findOne({listUser: currentUser})==null){
@@ -66,7 +73,7 @@ Template.start.onRendered(function(){
       }
     }
     if(MissionsList.findOne({missionUser: currentUser})==null){
-      MissionsList.insert({missionUser: currentUser, text: 'test'});
+      MissionsList.insert({missionUser: currentUser, text: 'Write your mission statement...'});
     }
     if(Goals.findOne({goalUser: currentUser})==null){
       for(var i =1; i<=5; i++){

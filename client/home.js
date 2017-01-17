@@ -1,7 +1,9 @@
+/* This piece of code is responsible for the svg drawing on the home page. */
+
 Template.home.onRendered(function(){
   "use strict";
   Meteor.setTimeout(function (){
-    //center of circle: 350,350
+    //declaring variables and colors
     var circleCenter = 350;
     var circleRadius = 300;
     var lighterGreen = "#CCFF99";

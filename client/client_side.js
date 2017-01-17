@@ -1,3 +1,4 @@
+/*This is what the client receives from the server. It specifies the data it needs.*/
 Meteor.subscribe('quotes');
 Meteor.subscribe('prompts');
 Meteor.subscribe('progress');
@@ -6,6 +7,11 @@ Meteor.subscribe('goals');
 Meteor.subscribe('roles');
 Meteor.subscribe('events');
 Meteor.subscribe('priorities');
+
+/* This belongs to an external library for jquery validation of credentials.
+*  We have implemented some of our own validation so not everything here is
+*  used. 
+*/
 $.validator.setDefaults({
 rules: {
     email: {

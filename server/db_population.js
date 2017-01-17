@@ -47,4 +47,3 @@ if(MissionPrompts.find().count() === 0){
       MissionPrompts.insert({prompt: "If you could be anyone, who would you be?"});
       MissionPrompts.insert({prompt: "How would you live if you knew your time was limited?"});      
 } 
-console.log(Priorities.find().fetch());

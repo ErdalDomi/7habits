@@ -1,9 +1,9 @@
 <template name="navigation">
-
+<!-- The spacebar conditional syntax helps us show the logout button only if the user is logged in. -->
   <ul class="navbar">
   	{{#unless currentUser}}
 	    <li class="options">
-		    <a href="{{pathFor route='start'}}">
+		    <a href="{{pathFor route='start'}}"> <!-- this is router syntax for anchors -->
 		    	<i class="material-icons md-18" style="font-size:25px;color:#A4B93C;">home</i>
 		    </a>
 	    </li>
@@ -13,7 +13,6 @@
   			<a href="#" class="logout">Logout</a>
   		</li>
   	{{/if}}
-
 
     <li class="options" style="float:right;font-size:20px;">
     	<a href="{{pathFor route='home'}}">Home</a>

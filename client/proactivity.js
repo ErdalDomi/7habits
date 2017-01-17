@@ -4,16 +4,12 @@ Template.proactivity.helpers({
   }
 });
 
-
+/* When the user completes all 30 days the 'advance' button will be replaced by text */
 Template.proactivityQuote.helpers({
   finished : function(){
-    console.log("Inside finished and it returns:")
     var currentUser = Meteor.userId();
-    console.log("Current user is: "+ currentUser);
     var currentId = ProgressList.findOne({listUser:currentUser, class:'current'})._id;
-    console.log("Current day id is: "+ currentId);
     var currentDay = ProgressList.findOne({_id:currentId}).day;
-    console.log("Current day is: " + currentDay);
     if(currentDay==30){
         return true;
     } else{
@@ -22,13 +18,13 @@ Template.proactivityQuote.helpers({
   }
 });
 
+/* In this part we'd like to implement a quick mechanism that will allow users only one 'advance'
+*  per day, reset each night at midnight and the option to restart their challenge. 
+*  The way user advances through the checklist is by finding the day with the 'current' class
+*  and promoting it to a completed class. Then it finds the next day and sets that as current.
+*/ 
 Template.proactivity.events({
     'click .advance': function(event){
-
-        console.log("Day ends in: " + moment().endOf('day').fromNow());
-
-        console.log("It's 8pm?: " +(moment().endOf('day').fromNow() === "in 4 hours"));
-
         $('.proactivityPrompt').stop().animate({
           'opacity' : '1'
         }, 500);
@@ -38,19 +34,15 @@ Template.proactivity.events({
         $('.advance').hide();
 
         var currentUser = Meteor.userId();
-        console.log("Current user is: "+ currentUser);
         var currentId = ProgressList.findOne({listUser:currentUser, class:'current'})._id;
-        console.log("Current day id is: "+ currentId);
         var currentDay = ProgressList.findOne({_id:currentId}).day;
-        console.log("Current day is: " + currentDay);
         ProgressList.update({_id:currentId}, {$set:{class:'completed'}});
-        console.log("updated current day to completed");
         var nextId = ProgressList.findOne({day:currentDay+1})._id;
-        console.log("Next day id: "+ nextId);
         ProgressList.update({_id:nextId},{$set:{class:'current'}});
     }
 });
 
+/* This piece of code hides the prompts when the page renders */
 Template.proactivity.onRendered(function(){
     $('.proactivityPrompt').css('opacity','0');
     $('.proactivityExplain').css('opacity','0');

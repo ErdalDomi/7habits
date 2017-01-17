@@ -1,3 +1,9 @@
+/*The server publishes only specific information to it's clients. 
+* In this case we have that users can only subscribe to the data
+* they own. This is a good security mechanism to ensure privacy.
+* Some resources are available to all, like prompts and quotes.
+*/
+
 Meteor.publish('quotes', function(){
 	console.log("publish quotes curr user " + this.userId);
 	return QuotesList.find();
