@@ -1,3 +1,11 @@
+Meteor.subscribe('quotes');
+Meteor.subscribe('prompts');
+Meteor.subscribe('progress');
+Meteor.subscribe('missions');
+Meteor.subscribe('goals');
+Meteor.subscribe('roles');
+Meteor.subscribe('events');
+Meteor.subscribe('priorities');
 $.validator.setDefaults({
 rules: {
     email: {

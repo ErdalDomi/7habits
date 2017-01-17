@@ -38,7 +38,7 @@
     padding: 0 10px;
     border: 1px solid #ccc;
     background: #f9f9ff;
-    text-align: left;
+    text-align: center;
 }
 
 #external-events h4 {
@@ -66,14 +66,15 @@
 
 .weeklyPriorities{
 	position: relative;
-	width: 50%;
+	width: 40%;
 	height: 100%;
 	float: right;
 	border: 1px solid #ccc;
+	text-align: center;
 }
 
 .rolesGoals{
-	width: 50%;
+	width: 60%;
 	height: 100%;
 	border: 1px solid #ccc;
 }
@@ -100,13 +101,13 @@
 }
 
 .rolesDiv{
-	width: 50%;
+	width: 40%;
 	position: relative;
 	float: left;
 }
 
 .goalsDiv{
-	width:50%;
+	width:60%;
 	position: relative;
 	float: right;
 }
@@ -116,28 +117,35 @@
 	border-bottom: 1px solid #ccc;
     padding-bottom: 9px;
 }
-#goalInput{
-	width: 80%;
-	margin-left: 13px;
+
+
+#goalInput:focus, #roleInput:focus, #eventTitle:focus, #eventDescription:focus, #eventTime:focus, #eventColor:focus{
+	outline: none;
+}
+
+#roleInput , #eventTitle, #goalInput, #eventDescription, #eventTime, #eventColor{
+	width:88%;
 	border: none; 
 	border-bottom: 1px solid #ccc; 
 	background-color: #f9f9ff;
 	text-align: center;	
+	margin-left: 13px;	
+	text-overflow: ellipsis;	
 }
 
-#goalInput:focus{
-	outline: none;
+#eventDescription,#eventTitle{
+	text-align: left;
+	height: auto;
 }
 
-#roleInput{
-	width:80%;
-	border: none; 
-	border-bottom: 1px solid #ccc; 
-	background-color: #f9f9ff;
-	text-align: center;	
-	margin-left: 13px;		
+.deleteDiv{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    right: 0;
+    vertical-align: middle;
 }
 
-#roleInput:focus{
-	outline: none;
+.deleteDiv:hover{
+	background-color: pink;
 }

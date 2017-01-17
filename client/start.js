@@ -20,21 +20,20 @@ Template.start.onRendered(function(){
   });
   var validator = $('.login').validate({
     submitHandler: function(event){
-      console.log("inside login handler");
+
       var email = $('[name=login-email]').val();
       var password = $('[name=login-password]').val();
-      console.log("retrieved : "+ email + " and " + password);
+
       Meteor.loginWithPassword(email,password, function(error){
-        console.log("login with pass");
+
         if (error) {
-          console.log("error");
-          console.log(error);
+
           if (error.reason == "User not found") {
-            console.log("user not found error");
+
             validator.showErrors({
               'login-email': "That email doesn't belong to a registered user."
             });
-            console.log("shit");
+
           }
           if (error.reason == "Incorrect password") {
             validator.showErrors({
@@ -54,6 +53,35 @@ Template.start.onRendered(function(){
       });
     }
   });
+
+  settingUpAccount = function(){
+    var currentUser = Meteor.userId();
+    if(ProgressList.findOne({listUser: currentUser})==null){
+      for (var i = 1; i <=30; i++) {
+        if(i==1){
+          ProgressList.insert({listUser: currentUser,class: "current", day: i});
+        }else{
+          ProgressList.insert({listUser: currentUser,class: "none", day: i});
+        }        
+      }
+    }
+    if(MissionsList.findOne({missionUser: currentUser})==null){
+      MissionsList.insert({missionUser: currentUser, text: 'test'});
+    }
+    if(Goals.findOne({goalUser: currentUser})==null){
+      for(var i =1; i<=5; i++){
+        for(var j=1; j<=4; j++){
+          Goals.insert({goalUser: currentUser,name:"", number:j, goal:i});
+        }        
+      }      
+    } 
+    if(Roles.findOne({roleUser: currentUser})==null){
+      for(var i =1; i<=5; i++){
+        Roles.insert({roleUser: currentUser,name:"", number: i});
+      }
+    }    
+  }
+
   var registerValidator = $('.register').validate({
     submitHandler: function(event){
       var email = $('[name=register-email]').val();
@@ -69,6 +97,7 @@ Template.start.onRendered(function(){
             });
           }
         } else {
+          settingUpAccount();
           $("#registerModal").modal("hide");
           $('body').removeClass('modal-open');
           $('.modal-backdrop').remove();

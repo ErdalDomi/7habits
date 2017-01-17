@@ -1,5 +1,4 @@
 if(QuotesList.find().count() === 0){
- 
   QuotesList.insert({saying: "It is the ability to choose which makes us human.", author: "Madeleine L'Engle - Habit 1: Be Proactive"});
           QuotesList.insert({saying: "How would today be different if you believed and acted on the idea that you can live out of your imagination instead of out your memory?",
           author: "Habit 2: Begin With the End in Mind"});
@@ -40,43 +39,6 @@ if(QuotesList.find().count() === 0){
       );
 }
 
-if(ProgressList.find().count() === 0){
-    ProgressList.insert({class: "completed", day:1});
-    ProgressList.insert({class: "completed", day:2});
-    ProgressList.insert({class: "completed", day:3 });
-    ProgressList.insert({class: "completed", day:4 });
-    ProgressList.insert({class: "completed",day:5});
-    ProgressList.insert({class: "current",day:6});
-    ProgressList.insert({class: "none",day:7});
-    ProgressList.insert({class: "none",day:8});
-    ProgressList.insert({class: "none",day:9});
-    ProgressList.insert({class: "none",day:10});
-    ProgressList.insert({class: "none",day:11});
-    ProgressList.insert({class: "none",day:12});
-    ProgressList.insert({class: "none",day:13});
-    ProgressList.insert({class: "none",day:14});
-    ProgressList.insert({class: "none",day:15});
-    ProgressList.insert({class: "none",day:16});
-    ProgressList.insert({class: "none",day:17});
-    ProgressList.insert({class: "none",day:18});
-    ProgressList.insert({class: "none",day:19});
-    ProgressList.insert({class: "none",day:20});
-    ProgressList.insert({class: "none",day:21});
-    ProgressList.insert({class: "none",day:22});
-    ProgressList.insert({class: "none",day:23});
-    ProgressList.insert({class: "none",day:24});
-    ProgressList.insert({class: "none",day:25});
-    ProgressList.insert({class: "none",day:26});
-    ProgressList.insert({class: "none",day:27});
-    ProgressList.insert({class: "none",day:28});
-    ProgressList.insert({class: "none",day:29});
-    ProgressList.insert({class: "none",day:30});
-
-}
-if(MissionsList.find().count() === 0){
-  MissionsList.insert({text: "Write your missions statement..."});
-}
-
 if(MissionPrompts.find().count() === 0){
       MissionPrompts.insert({prompt: "What would you do if money wasn't a problem?"});
       MissionPrompts.insert({prompt: "Who are your role models? What do you value most about them?"});
@@ -84,4 +46,5 @@ if(MissionPrompts.find().count() === 0){
       MissionPrompts.insert({prompt: "What do you value above all else and won't compromise?"});
       MissionPrompts.insert({prompt: "If you could be anyone, who would you be?"});
       MissionPrompts.insert({prompt: "How would you live if you knew your time was limited?"});      
-}
+} 
+console.log(Priorities.find().fetch());

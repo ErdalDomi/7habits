@@ -17,7 +17,11 @@
 </template>
 
 <template name="proactivityQuote">
-	<button type="button" class="btn advance btn-lg">Advance</button>
-	<h3 class="proactivityPrompt">Being proactive means taking responsibility.</h3>
-	<p class="proactivityExplain">You've completed the check for today. Turn again tomorrow to complete the next day.</p>
+	{{#if finished}}
+		<h3 class="proactivityPrompt">You've completed the 30 day challenge! Well done!</h3>
+	{{else}}
+		<button type="button" class="btn advance btn-lg">Advance</button>
+		<h3 class="proactivityPrompt">Being proactive means taking responsibility.</h3>
+		<p class="proactivityExplain">You've completed the check for today. Turn again tomorrow to complete the next day.</p>
+	{{/if}}
 </template>

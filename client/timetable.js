@@ -1,23 +1,25 @@
 Template.timetable.onRendered(function(){
-	/* initialize the external events
-	-----------------------------------------------------------------*/
+	Session.set('addEvent', false);
+	/* initialize the external events-----------------------------------------------------------------*/
+	window.setTimeout(function(){
+		$('#external-events .fc-event').each(function() {
+		    // store data so the calendar knows to render an event upon drop
+		    $(this).data('event', {
+		        title: $.trim($(this).text()), // use the element's text as the event title
+		        stick: true // maintain when user navigates (see docs on the renderEvent method)
+		    });
 
-	$('#external-events .fc-event').each(function() {
+		    // make the event draggable using jQuery UI
+		    $(this).draggable({
+		        zIndex: 999,
+		        revert: true,      // will cause the event to go back to its
+		        revertDuration: 0  //  original position after the drag
+		    });
 
-	    // store data so the calendar knows to render an event upon drop
-	    $(this).data('event', {
-	        title: $.trim($(this).text()), // use the element's text as the event title
-	        stick: true // maintain when user navigates (see docs on the renderEvent method)
-	    });
+		});	
 
-	    // make the event draggable using jQuery UI
-	    $(this).draggable({
-	        zIndex: 999,
-	        revert: true,      // will cause the event to go back to its
-	        revertDuration: 0  //  original position after the drag
-	    });
+	},500);
 
-	});	
     var isEventOverDiv = function(x, y) {
 
         var external_events = $( '#external-events' );
@@ -32,12 +34,41 @@ Template.timetable.onRendered(function(){
             && y <= offset .bottom) { return true; }
         return false;
 
+    }
+
+    var getEvents = function(){
+    	var events = [
+	    	{
+	    		title: "event1",
+	    		start: "2017-01-17T13:00:00"
+	    	},
+	    	{
+	    		title: "event2",
+	    		start: "2017-01-17T17:00:00"
+	    	}
+    	];
+    	console.log(events);
+    	return events;
     }	
+
+    $('.deleteDiv').droppable({
+        drop: function(event, ui) {
+        	console.log("delete div droppable over functoin");
+            ui.draggable.remove();
+            var deleteTitle = $(ui.draggable).text();
+            console.log(deleteTitle);
+            elementId = Priorities.findOne({title: deleteTitle})._id;
+            console.log(elementId)
+            Priorities.remove({_id: elementId});
+        }
+    });
+
 
     /* initialize the calendar
     -----------------------------------------------------------------*/
 
     $('#calendar').fullCalendar({
+    	events: getEvents(),
     	height: 650,
 		contentHeight:'auto',
 		slotDuration:'00:60:00',
@@ -54,15 +85,56 @@ Template.timetable.onRendered(function(){
         eventLimit: true,
         droppable: true, // this allows things to be dropped onto the calendar
         dragRevertDuration: 0,
-        drop: function() {
-            // is the "remove after drop" checkbox checked?
-            if ($('#drop-remove').is(':checked')) {
-                // if so, remove the element from the "Draggable Events" list
-                $(this).remove();
-            }
+        drop: function(date) {
+        	deleteTitle= this.innerHTML;
+        	console.log(this.innerHTML);
+			insertStart=date.format();
+			defaultDuration = moment.duration($('#calendar').fullCalendar('option', 'defaultTimedEventDuration'));
+			//insertEnd = date.add(defaultDuration); // on drop we only have date given to us
+            elementId = Priorities.findOne({title: deleteTitle})._id;
+            insertTitle = Priorities.findOne({_id: elementId}).title;
+            insertDescription = Priorities.findOne({_id: elementId}).description;
+            currentUser = Meteor.userId();
+            insertColor = Priorities.findOne({_id: elementId}).color;
+            
+            Events.insert({
+            	title: insertTitle, 
+            	//allDay: false, 	
+            	start: insertStart, 
+            	//end: insertEnd, 
+            	eventUser: currentUser,
+            	//color: insertColor
+            });
+
+            Priorities.remove({_id:elementId});
+            // console.log(elementId)
+			// Events.insert({});
+
+
+			// retrieve the dropped element's stored Event Object
+			// var originalEventObject = $(this).data('eventObject');
+
+			// // we need to copy it, so that multiple events don't have a reference to the same object
+			// var copiedEventObject = $.extend({}, originalEventObject);
+
+			// // assign it the date that was reported
+			// copiedEventObject.start = date;
+			// //copiedEventObject.allDay = allDay;
+
+			// copiedEventObject.backgroundColor = $(this).css("background-color");
+			// copiedEventObject.borderColor = $(this).css("border-color");
+
+			// render the event on the calendar
+			// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+			//$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+			// is the "remove after drop" checkbox checked?
+			if ($('#drop-remove').is(':checked')) {
+				// if so, remove the element from the "Draggable Events" list
+				$(this).remove();
+			}
         },
         eventDragStop: function( event, jsEvent, ui, view ) {
-            
+        
             if(isEventOverDiv(jsEvent.clientX, jsEvent.clientY)) {
                 $('#calendar').fullCalendar('removeEvents', event._id);
                 var el = $( "<div class='fc-event'>" ).appendTo( '#external-events-listing' ).text( event.title );
@@ -73,6 +145,8 @@ Template.timetable.onRendered(function(){
                 });
                 el.data('event', { title: event.title, id :event.id, stick: true });
             }
+
+
         },
 	    eventClick:  function(event, jsEvent, view) {
 		      $('#modalTitle').html(event.title);
@@ -87,24 +161,79 @@ Template.timetable.onRendered(function(){
 });
 
 Template.timetable.events({
-	'click .saveEvent': function(event){
-		var title = $("#eventTitle").val();
-        var date = $('#eventDate').val();
-        var time = $('#eventTime').val();
-        var description = $("#eventDescription").val();
-        var events = new Array();
-        event = new Object();
-        event.title = title;
-        event.start = date;
-        event.allDay = false;
-        $('#calendar').fullCalendar('renderEvent', event);
-        console.log("got here");		
+	'click .eventButton': function(event){
+		Session.set('addEvent', true);
+
+	},
+	'click .goBack':function(event){
+		Session.set('addEvent', false);
+	}
+
+});
+
+Template.timetable.helpers({
+	'addingEvent' : function(){
+		return Session.get('addEvent');
 	}
 });
 
 
+Template.roleItems.helpers({
+	'role' : function(){
+		return Roles.find();
+	}
+});
+
+Template.roleItems.events({
+	'keyup #roleInput': function(event){
+		var documentId = this._id;
+		var roleItem = $(event.target).val();
+		Roles.update({_id: documentId}, {$set: { name: roleItem}});
+	}
+});
+
+Template.goalItems.helpers({
+	'goal' : function(){
+		return Goals.find();
+	},
+	'last' : function(){
+		if(this.number == 4){
+			return true;
+		}
+		return false;
+	}
+});
+
+Template.goalItems.events({
+	'keyup #goalInput': function(event){
+		var documentId = this._id;
+		var goalItem = $(event.target).val();
+		Goals.update({ _id: documentId }, {$set: { name: goalItem }});
+	}
+});
 
 
+Template.addEvent.events({
+	'click .addEvent':function(event){
+		event.preventDefault();
+		var currentUser = Meteor.userId();
+		var eventTitle = $('#eventTitle').val();
+		var eventDescription = $('#eventDescription').val();
+		var eventColor = $('#eventColor').val();
+		Priorities.insert({eventUser:currentUser, title: eventTitle, description: eventDescription, color: eventColor});
+		$('#eventTitle').val('');
+		$('#eventDescription').val('');
+		Session.set('addEvent', false);
+		console.log("refreshing...");
+		Router.current().render(Template.timetable);
+	}
+});
+
+Template.weeklyPrioritiesTemplate.helpers({
+	'priorities' : function(){
+		return Priorities.find().fetch();
+	}	
+});
 
 	// $('#calendar').fullCalendar({
 		
